@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SignupService } from 'src/app/all-services/signup/signup.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-signup',
@@ -19,13 +23,26 @@ export class SignupComponent implements OnInit {
     phone : new FormControl('',[Validators.required])
   });
 
-  usersignUp(){
-    console.log(this.signUp.value);
-  }
 
-  constructor() { }
+  constructor(private signupService:SignupService,private router:Router) { }
+
 
   ngOnInit(): void {
+  }
+
+
+  usersignUp(){
+    console.log(this.signUp.value);
+    this.signupService.userSignUp(this.signUp.value).subscribe
+    ((data:any)=>{
+      Swal.fire('Successfully Done','Welcome to Career Infotech','success');
+      console.log(data);
+      this.router.navigate(['']);
+    },
+    (err:any)=>{
+      Swal.fire('Something went wrongs','User Not Found','error');
+      console.log(err);
+    })
   }
 
 }

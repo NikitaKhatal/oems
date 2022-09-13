@@ -6,6 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatToolbarModule,
     MatInputModule,
