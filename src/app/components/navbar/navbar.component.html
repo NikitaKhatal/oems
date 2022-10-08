@@ -1,7 +1,9 @@
 <p>
   <mat-toolbar color="primary">
-    <span class="example-spacer">My Application</span>
-    <a routerLink="signin" class="btn btn-light text-primary nav-links">Sign In</a>
-    <a routerLink="signup" class="btn btn-light text-primary nav-links mx-3">Sign Up</a>
+    <span class="example-spacer">OEMS</span>
+    <!-- <a *ngIf="!issignIn" routerLink="signin" class="btn btn-light text-primary nav-links">Sign In</a>
+    <a  *ngIf="!issignIn" routerLink="signup" class="btn btn-light text-primary nav-links mx-3">Sign Up</a>
+    <a *ngIf="issignIn && user" class="text-light nav-links m-3 text-decoration-none">{{user.username}}</a>
+     <a *ngIf="issignIn" (click)="signOut()" class="btn btn-light text-primary nav-links">Sign Out</a> -->
   </mat-toolbar>
 </p>

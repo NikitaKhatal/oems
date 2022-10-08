@@ -1,0 +1,21 @@
+
+ <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>UserDashboard</span>
+    <span class="example-spacer"></span>
+    <!-- <a *ngIf="issignIn && user" class="nav-links text-decoration-none text-light">{{user.username}}</a> -->
+    <p *ngIf="issignIn && user" class="text-light m-2">{{user.username}}</p>
+    <!-- <a *ngIf="issignIn" (click)="signOut()" class="btn btn-light text-dark nav-links">Sign Out</a> -->
+    <button *ngIf="issignIn" (click)="signOut()" type="button" class="btn btn-light text-dark">Sign Out</button>
+  </mat-toolbar>
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="sidebar text-light">Drawer content
+    </mat-drawer>
+    <mat-drawer-content>
+      Main content
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+

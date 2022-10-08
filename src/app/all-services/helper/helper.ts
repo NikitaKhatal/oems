@@ -1,2 +1,2 @@
-let basUrl ="http://43.205.181.109:9999";
+let basUrl ="http://13.126.166.223:9999";
 export default basUrl;

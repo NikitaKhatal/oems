@@ -1,0 +1,67 @@
+
+ <mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>AdminDashboard</span>
+  <span class="example-spacer"></span>
+  <div mat-card-avatar class="example-header-image m-auto"></div>
+  <p *ngIf="issignIn && user" class="text-light m-2">{{user.username}}</p>
+  <!-- <button *ngIf="issignIn" (click)="signOut()" type="button" class="btn btn-light text-dark">Sign Out</button> -->
+</mat-toolbar>
+
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="sidebar text-light">
+      <ul>
+                <li>
+                    <a [routerLink]="['']">
+                        <i class="fa fa-home"></i>
+                        <span class="nav-item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['profile']">
+                        <i class="fa fa-user-circle"></i>
+                        <span class="nav-item">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'category'">
+                        <i class="fa fa-bars"></i>
+                        <span class="nav-item">Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'addcategories'">
+                        <i class="fa fa-plus-circle"></i>
+                        <span class="nav-item">Add Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'quizzes'">
+                        <i class="fa fa-tasks"></i>
+                        <span class="nav-item">Quizzes</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'addquizzes'">
+                        <i class="fa fa-plus"></i>
+                        <span class="nav-item">Add Quizzes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="logout" *ngIf="issignIn" (click)="signOut()">
+                        <i class="fa fa-sign-out"></i>
+                        <span class="nav-item">Logout</span>
+                    </a>
+                </li>
+            </ul>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet class="mx-3"></router-outlet>
+      <!-- Main content -->
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
